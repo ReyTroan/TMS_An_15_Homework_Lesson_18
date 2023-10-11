@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Profile Registration</string>
+    <string name="login">Логин</string>
+    <string name="receive_news_by_email">получать новости по электронной почте?</string>
+    <string name="receive_notifications">получать уведомления?</string>
+    <string name="accept_cookies">принимаете файлы cookie?</string>
+    <string name="enter">Войти</string>
+    <string name="password">Пароль</string>
+    <string name="eng_button">АНГЛ</string>
+    <string name="rus_button">РУС</string>
+    <string name="username">Имя пользователя</string>
+    <string name="profile">Профиль</string>
+    <string name="your_username">Ваше имя пользователя:</string>
+    <string name="the_receipt_of_cookies_is_approved">получение файлов cookie одобрено</string>
+    <string name="exit">Выйти</string>
+    <string name="notifications_are_enabled">Уведомления включены</string>
+    <string name="subscribe_to_the_latest_news">Подписаны на последние новости</string>
+    <string name="your_password">Ваш пароль:</string>
+</resources>

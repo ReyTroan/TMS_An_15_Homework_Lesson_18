@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Profile Registration</string>
+    <string name="login">Login</string>
+    <string name="receive_news_by_email">receive news by email?</string>
+    <string name="receive_notifications">receive notifications?</string>
+    <string name="accept_cookies">accept cookies?</string>
+    <string name="enter">Enter</string>
+    <string name="password">Password</string>
+    <string name="eng_button">ENG</string>
+    <string name="rus_button">RU</string>
+    <string name="username">Username</string>
+    <string name="profile">Profile</string>
+    <string name="your_username">Your username:</string>
+    <string name="the_receipt_of_cookies_is_approved">The receipt of cookies is approved</string>
+    <string name="exit">Exit</string>
+    <string name="notifications_are_enabled">Notifications are enabled</string>
+    <string name="subscribe_to_the_latest_news">Subscribe to the latest news</string>
+    <string name="your_password">Your password:</string>
+</resources>
