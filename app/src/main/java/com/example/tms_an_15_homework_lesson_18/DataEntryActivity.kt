@@ -1,6 +1,5 @@
 package com.example.tms_an_15_homework_lesson_18
 
-
 import android.content.Context
 import android.content.Intent
 import android.graphics.Color
@@ -13,7 +12,6 @@ import android.widget.RadioGroup
 import java.util.Locale
 
 class DataEntryActivity : AppCompatActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_data_entry)
@@ -22,15 +20,14 @@ class DataEntryActivity : AppCompatActivity() {
         val loginText = findViewById<EditText>(R.id.username)
         val passwordText = findViewById<EditText>(R.id.password)
 
-
         button.setOnClickListener {
             val checkButtonIndex = findViewById<RadioGroup>(R.id.radioGroup).checkedRadioButtonId
 
-            if (loginText.text.length < 6) {
+            if (loginText.text.length < VALID_LOGIN_LENGTH) {
                 button.setBackgroundColor(Color.RED)
                 loginText.error = "Username Required"
                 return@setOnClickListener
-            } else if (passwordText.text.length < 6) {
+            } else if (passwordText.text.length < VALID_PASSWORD_LENGTH) {
                 button.setBackgroundColor(Color.RED)
                 passwordText.error = "Password Required"
                 return@setOnClickListener
@@ -40,6 +37,7 @@ class DataEntryActivity : AppCompatActivity() {
                         setLocale(this, "en")
                         recreate()
                     }
+
                     R.id.radioButton2 -> {
                         setLocale(this, "ru")
                         recreate()
@@ -50,10 +48,18 @@ class DataEntryActivity : AppCompatActivity() {
                 intent.putExtra("login", loginText.text.toString())
                 intent.putExtra("password", passwordText.text.toString())
 
-                intent.putExtra("checkBox1", findViewById<CheckBox>(R.id.checkBox1).isChecked)
-                intent.putExtra("checkBox2", findViewById<CheckBox>(R.id.checkBox2).isChecked)
-                intent.putExtra("checkBox3", findViewById<CheckBox>(R.id.checkBox3).isChecked)
-
+                intent.putExtra(
+                    CheckBoxKeys.CHECKBOX_1,
+                    findViewById<CheckBox>(R.id.checkBox1).isChecked
+                )
+                intent.putExtra(
+                    CheckBoxKeys.CHECKBOX_2,
+                    findViewById<CheckBox>(R.id.checkBox2).isChecked
+                )
+                intent.putExtra(
+                    CheckBoxKeys.CHECKBOX_3,
+                    findViewById<CheckBox>(R.id.checkBox3).isChecked
+                )
                 startActivity(intent)
             }
         }
@@ -65,6 +71,11 @@ class DataEntryActivity : AppCompatActivity() {
         val configuration = context.resources.configuration
         configuration.setLocale(locale)
         context.createConfigurationContext(configuration)
+    }
+
+    companion object {
+        const val VALID_LOGIN_LENGTH = 6
+        const val VALID_PASSWORD_LENGTH = 6
     }
 }
 
